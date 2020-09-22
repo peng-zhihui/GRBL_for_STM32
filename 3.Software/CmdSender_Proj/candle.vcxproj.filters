@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="parser\arcproperties.cpp" />
+    <ClCompile Include="widgets\colorpicker.cpp" />
+    <ClCompile Include="widgets\combobox.cpp" />
+    <ClCompile Include="widgets\comboboxkey.cpp" />
+    <ClCompile Include="frmabout.cpp" />
+    <ClCompile Include="frmmain.cpp" />
+    <ClCompile Include="frmsettings.cpp" />
+    <ClCompile Include="drawers\gcodedrawer.cpp" />
+    <ClCompile Include="parser\gcodeparser.cpp" />
+    <ClCompile Include="parser\gcodepreprocessorutils.cpp" />
+    <ClCompile Include="tables\gcodetablemodel.cpp" />
+    <ClCompile Include="parser\gcodeviewparse.cpp" />
+    <ClCompile Include="widgets\glwidget.cpp" />
+    <ClCompile Include="widgets\groupbox.cpp" />
+    <ClCompile Include="drawers\heightmapborderdrawer.cpp" />
+    <ClCompile Include="drawers\heightmapgriddrawer.cpp" />
+    <ClCompile Include="drawers\heightmapinterpolationdrawer.cpp" />
+    <ClCompile Include="tables\heightmaptablemodel.cpp" />
+    <ClCompile Include="parser\linesegment.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="drawers\origindrawer.cpp" />
+    <ClCompile Include="parser\pointsegment.cpp" />
+    <ClCompile Include="widgets\scrollarea.cpp" />
+    <ClCompile Include="drawers\selectiondrawer.cpp" />
+    <ClCompile Include="drawers\shaderdrawable.cpp" />
+    <ClCompile Include="widgets\slider.cpp" />
+    <ClCompile Include="widgets\sliderbox.cpp" />
+    <ClCompile Include="widgets\styledtoolbutton.cpp" />
+    <ClCompile Include="drawers\tooldrawer.cpp" />
+    <ClCompile Include="widgets\widget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="parser\arcproperties.h" />
+    <ClInclude Include="widgets\comboboxkey.h" />
+    <ClInclude Include="drawers\heightmapborderdrawer.h" />
+    <ClInclude Include="drawers\heightmapgriddrawer.h" />
+    <ClInclude Include="drawers\heightmapinterpolationdrawer.h" />
+    <ClInclude Include="utils\interpolation.h" />
+    <ClInclude Include="parser\linesegment.h" />
+    <ClInclude Include="drawers\origindrawer.h" />
+    <ClInclude Include="parser\pointsegment.h" />
+    <ClInclude Include="drawers\selectiondrawer.h" />
+    <ClInclude Include="drawers\shaderdrawable.h" />
+    <ClInclude Include="widgets\styledtoolbutton.h" />
+    <ClInclude Include="drawers\tooldrawer.h" />
+    <ClInclude Include="utils\util.h" />
+    <ClInclude Include="ui_frmabout.h" />
+    <ClInclude Include="ui_frmmain.h" />
+    <ClInclude Include="ui_frmsettings.h" />
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt" />
+    <CustomBuild Include="release\moc_predefs.h.cbt" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="widgets\colorpicker.h" />
+    <QtMoc Include="widgets\combobox.h" />
+    <QtMoc Include="frmabout.h" />
+    <QtMoc Include="frmmain.h" />
+    <QtMoc Include="frmsettings.h" />
+    <QtMoc Include="drawers\gcodedrawer.h" />
+    <QtMoc Include="parser\gcodeparser.h" />
+    <QtMoc Include="parser\gcodepreprocessorutils.h" />
+    <QtMoc Include="tables\gcodetablemodel.h" />
+    <QtMoc Include="parser\gcodeviewparse.h" />
+    <QtMoc Include="widgets\glwidget.h" />
+    <QtMoc Include="widgets\groupbox.h" />
+    <QtMoc Include="tables\heightmaptablemodel.h" />
+    <QtMoc Include="widgets\scrollarea.h" />
+    <QtMoc Include="widgets\slider.h" />
+    <QtMoc Include="widgets\sliderbox.h" />
+    <QtMoc Include="widgets\widget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="images.qrc" />
+    <QtRcc Include="shaders.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="frmabout.ui" />
+    <QtUic Include="frmmain.ui" />
+    <QtUic Include="frmsettings.ui" />
+    <QtUic Include="widgets\sliderbox.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="translations\candle_en.ts" />
+    <None Include="translations\candle_es.ts" />
+    <None Include="translations\candle_fr.ts" />
+    <None Include="translations\candle_pt.ts" />
+    <None Include="translations\candle_ru.ts" />
+    <None Include="images\1401561986_chevron-left.png" />
+    <None Include="images\1401562173_chevron-down.png" />
+    <None Include="images\1401562173_chevron-right.png" />
+    <None Include="images\1401562173_chevron-up.png" />
+    <None Include="images\1401562699_icon-arrow-down-b.png" />
+    <None Include="images\1401562699_icon-arrow-up-b.png" />
+    <None Include="images\axis_return.png" />
+    <None Include="images\axis_zero.png" />
+    <None Include="images\brake.png" />
+    <None Include="images\candle_256.png" />
+    <None Include="images\collapse.png" />
+    <None Include="images\collapse_disabled.png" />
+    <None Include="images\cube.png" />
+    <None Include="images\cubeFront.png" />
+    <None Include="images\cubeLeft.png" />
+    <None Include="images\cubeTop.png" />
+    <None Include="images\cutter.png" />
+    <None Include="images\erase_1.png" />
+    <None Include="images\expand.png" />
+    <None Include="images\expand_disabled.png" />
+    <None Include="images\fit_1.png" />
+    <None Include="shaders\fshader.glsl" />
+    <None Include="images\guard.png" />
+    <None Include="images\handle2s.png" />
+    <None Include="images\handle2s1.png" />
+    <None Include="images\handle2sh.png" />
+    <None Include="images\handle_horizontal.png" />
+    <None Include="images\handle_small.png" />
+    <None Include="images\handle_vertical.png" />
+    <None Include="images\icon3png.png" />
+    <None Include="images\num1.png" />
+    <None Include="images\num2.png" />
+    <None Include="images\num3.png" />
+    <None Include="images\num4.png" />
+    <None Include="images\origin.png" />
+    <None Include="images\restart.png" />
+    <None Include="images\run.png" />
+    <None Include="images\safe_z.png" />
+    <None Include="images\search_for_home2.png" />
+    <None Include="images\search_for_z.png" />
+    <None Include="images\send_1.png" />
+    <None Include="images\shadow.png" />
+    <None Include="images\small_arrow.png" />
+    <None Include="images\unlock.png" />
+    <None Include="shaders\vshader.glsl" />
+    <None Include="images\zero_z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="candle.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Cnc-Machine-595b40b65ba036ed117d3e24.ico" />
+    <Image Include="images\icon.ico" />
+  </ItemGroup>
+</Project>
