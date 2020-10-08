@@ -367,6 +367,9 @@ QSlider::handle:horizontal:hover {
            </item>
            <item>
             <widget class="QTableView" name="tblHeightMap">
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
              <property name="alternatingRowColors">
               <bool>true</bool>
              </property>
@@ -1550,6 +1553,9 @@ QSlider::handle:horizontal:hover {
          </item>
          <item>
           <widget class="GroupBox" name="grpHeightMap">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="title">
             <string>Heightmap</string>
            </property>
@@ -1907,6 +1913,9 @@ QSlider::handle:horizontal:hover {
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>
@@ -1952,6 +1961,9 @@ QSlider::handle:horizontal:hover {
          </property>
          <item>
           <widget class="GroupBox" name="grpJog">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="title">
             <string>Jog</string>
            </property>
@@ -2536,6 +2548,9 @@ QSlider::handle:horizontal:hover {
               <font>
                <pointsize>9</pointsize>
               </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="readOnly">
               <bool>true</bool>

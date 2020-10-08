@@ -474,6 +474,7 @@ public:
 
         tblHeightMap = new QTableView(layoutWidget);
         tblHeightMap->setObjectName(QString::fromUtf8("tblHeightMap"));
+        tblHeightMap->setFocusPolicy(Qt::NoFocus);
         tblHeightMap->setAlternatingRowColors(true);
         tblHeightMap->setSelectionMode(QAbstractItemView::SingleSelection);
         tblHeightMap->setGridStyle(Qt::DashLine);
@@ -1139,6 +1140,7 @@ public:
 
         grpHeightMap = new GroupBox(grpControl);
         grpHeightMap->setObjectName(QString::fromUtf8("grpHeightMap"));
+        grpHeightMap->setFocusPolicy(Qt::NoFocus);
         grpHeightMap->setCheckable(true);
         grpHeightMap->setProperty("overrided", QVariant(false));
         verticalLayout_16 = new QVBoxLayout(grpHeightMap);
@@ -1320,6 +1322,7 @@ public:
         sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
         scrollArea->setSizePolicy(sizePolicy4);
+        scrollArea->setFocusPolicy(Qt::NoFocus);
         scrollArea->setFrameShape(QFrame::NoFrame);
         scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -1340,6 +1343,7 @@ public:
         verticalLayout_21->setContentsMargins(0, 0, 4, 0);
         grpJog = new GroupBox(scrollAreaWidgetContents);
         grpJog->setObjectName(QString::fromUtf8("grpJog"));
+        grpJog->setFocusPolicy(Qt::NoFocus);
         grpJog->setCheckable(true);
         grpJog->setProperty("overrided", QVariant(false));
         verticalLayout_11 = new QVBoxLayout(grpJog);
@@ -1605,6 +1609,7 @@ public:
         txtConsole->setObjectName(QString::fromUtf8("txtConsole"));
         txtConsole->setMinimumSize(QSize(0, 1));
         txtConsole->setFont(font);
+        txtConsole->setFocusPolicy(Qt::NoFocus);
         txtConsole->setReadOnly(true);
 
         verticalLayout_3->addWidget(txtConsole);

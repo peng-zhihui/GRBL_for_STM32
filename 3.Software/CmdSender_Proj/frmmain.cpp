@@ -3031,22 +3031,22 @@ bool frmMain::eventFilter(QObject* obj, QEvent* event)
 
 			switch (static_cast<QKeyEvent*>(event)->key())
 			{
-			case Qt::Key_4:
+			case Qt::Key_A:
 				if (event->type() == QEvent::KeyPress) emit ui->cmdXMinus->pressed(); else emit ui->cmdXMinus->released();
 				break;
-			case Qt::Key_6:
+			case Qt::Key_D:
 				if (event->type() == QEvent::KeyPress) emit ui->cmdXPlus->pressed(); else emit ui->cmdXPlus->released();
 				break;
-			case Qt::Key_8:
+			case Qt::Key_W:
 				if (event->type() == QEvent::KeyPress) emit ui->cmdYPlus->pressed(); else emit ui->cmdYPlus->released();
 				break;
-			case Qt::Key_2:
+			case Qt::Key_S:
 				if (event->type() == QEvent::KeyPress) emit ui->cmdYMinus->pressed(); else emit ui->cmdYMinus->released();
 				break;
-			case Qt::Key_9:
+			case Qt::Key_Q:
 				if (event->type() == QEvent::KeyPress) emit ui->cmdZPlus->pressed(); else emit ui->cmdZPlus->released();
 				break;
-			case Qt::Key_3:
+			case Qt::Key_Z:
 				if (event->type() == QEvent::KeyPress) emit ui->cmdZMinus->pressed(); else emit ui->cmdZMinus->released();
 				break;
 			}
@@ -3064,11 +3064,11 @@ bool frmMain::eventFilter(QObject* obj, QEvent* event)
 
 			if (!m_processingFile && ui->chkKeyboardControl->isChecked())
 			{
-				if (keyEvent->key() == Qt::Key_7)
+				if (keyEvent->key() == Qt::Key_Minus)
 				{
 					ui->cboJogStep->setCurrentPrevious();
 				}
-				else if (keyEvent->key() == Qt::Key_1)
+				else if (keyEvent->key() == Qt::Key_Equal)
 				{
 					ui->cboJogStep->setCurrentNext();
 				}
