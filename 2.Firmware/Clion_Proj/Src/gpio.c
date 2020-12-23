@@ -30,9 +30,9 @@
 
 /* USER CODE END 1 */
 
-/** Configure pins as 
-        * Analog 
-        * Input 
+/** Configure pins as
+        * Analog
+        * Input
         * Output
         * EVENT_OUT
         * EXTI
@@ -52,8 +52,8 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, COOL_FLOOD_Pin|COOL_MIST_Pin|STEP_ENABLE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, STEP_X_Pin|STEP_Y_Pin|STEP_Z_Pin|DIR_X_Pin 
-                          |DIR_Y_Pin|DIR_Z_Pin|AUX_1_Pin|AUX_2_Pin 
+  HAL_GPIO_WritePin(GPIOA, STEP_X_Pin|STEP_Y_Pin|STEP_Z_Pin|DIR_X_Pin
+                          |DIR_Y_Pin|DIR_Z_Pin|AUX_1_Pin|AUX_2_Pin
                           |AUX_3_Pin|AUX_4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -73,20 +73,20 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(STEP_ENABLE_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PAPin PAPin PAPin PAPin 
-                           PAPin PAPin PAPin PAPin 
+  /*Configure GPIO pins : PAPin PAPin PAPin PAPin
+                           PAPin PAPin PAPin PAPin
                            PAPin PAPin */
-  GPIO_InitStruct.Pin = STEP_X_Pin|STEP_Y_Pin|STEP_Z_Pin|DIR_X_Pin 
-                          |DIR_Y_Pin|DIR_Z_Pin|AUX_1_Pin|AUX_2_Pin 
+  GPIO_InitStruct.Pin = STEP_X_Pin|STEP_Y_Pin|STEP_Z_Pin|DIR_X_Pin
+                          |DIR_Y_Pin|DIR_Z_Pin|AUX_1_Pin|AUX_2_Pin
                           |AUX_3_Pin|AUX_4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PBPin PBPin PBPin PBPin 
+  /*Configure GPIO pins : PBPin PBPin PBPin PBPin
                            PBPin PBPin PBPin */
-  GPIO_InitStruct.Pin = CON_CYCLE_START_Pin|CON_FEED_HOLD_Pin|LIM_X_Pin|LIM_Y_Pin 
+  GPIO_InitStruct.Pin = CON_CYCLE_START_Pin|CON_FEED_HOLD_Pin|LIM_X_Pin|LIM_Y_Pin
                           |LIM_Z_Pin|CON_RESET_Pin|CON_SAFETY_DOOR_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;

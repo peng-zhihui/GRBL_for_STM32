@@ -23,10 +23,10 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "system.h"		//-- HandleControlIT
-#include "limits.h"		//-- HandleLimitIT
-#include "stepper.h"	//-- HandleStepSetIT and HandleStepResetIT
-#include "serial.h"		//-- HandleUartIT
+#include "system.h"        //-- HandleControlIT
+#include "limits.h"        //-- HandleLimitIT
+#include "stepper.h"    //-- HandleStepSetIT and HandleStepResetIT
+#include "serial.h"        //-- HandleUartIT
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,7 +36,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
- 
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,7 +56,7 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint16_t pinmask;			//-- debug
+uint16_t pinmask;            //-- debug
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -66,7 +66,7 @@ uint16_t pinmask;			//-- debug
 /* USER CODE END EV */
 
 /******************************************************************************/
-/*           Cortex-M3 Processor Interruption and Exception Handlers          */ 
+/*           Cortex-M3 Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
   * @brief This function handles Non maskable interrupt.
@@ -211,8 +211,8 @@ void EXTI0_IRQHandler(void)
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-  HandleControlIT(GPIO_PIN_0);
-  NVIC_ClearPendingIRQ(EXTI0_IRQn);
+    HandleControlIT(GPIO_PIN_0);
+    NVIC_ClearPendingIRQ(EXTI0_IRQn);
 
   /* USER CODE END EXTI0_IRQn 1 */
 }
@@ -227,8 +227,8 @@ void EXTI1_IRQHandler(void)
   /* USER CODE END EXTI1_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
   /* USER CODE BEGIN EXTI1_IRQn 1 */
-  HandleControlIT(GPIO_PIN_1);
-  NVIC_ClearPendingIRQ(EXTI1_IRQn);
+    HandleControlIT(GPIO_PIN_1);
+    NVIC_ClearPendingIRQ(EXTI1_IRQn);
   /* USER CODE END EXTI1_IRQn 1 */
 }
 
@@ -242,8 +242,8 @@ void EXTI3_IRQHandler(void)
   /* USER CODE END EXTI3_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
   /* USER CODE BEGIN EXTI3_IRQn 1 */
-  HandleControlIT(GPIO_PIN_3);
-  NVIC_ClearPendingIRQ(EXTI3_IRQn);
+    HandleControlIT(GPIO_PIN_3);
+    NVIC_ClearPendingIRQ(EXTI3_IRQn);
   /* USER CODE END EXTI3_IRQn 1 */
 }
 
@@ -257,8 +257,8 @@ void EXTI4_IRQHandler(void)
   /* USER CODE END EXTI4_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
   /* USER CODE BEGIN EXTI4_IRQn 1 */
-  HandleControlIT(GPIO_PIN_4);
-  NVIC_ClearPendingIRQ(EXTI4_IRQn);
+    HandleControlIT(GPIO_PIN_4);
+    NVIC_ClearPendingIRQ(EXTI4_IRQn);
   /* USER CODE END EXTI4_IRQn 1 */
 }
 
@@ -279,11 +279,11 @@ void TIM2_IRQHandler(void)
 		HandleStepSetIT();
 		}
 */
-  if (LL_TIM_IsActiveFlag_UPDATE(TIM2))
+    if (LL_TIM_IsActiveFlag_UPDATE(TIM2))
     {
-    LL_TIM_ClearFlag_UPDATE(TIM2);
-    LL_TIM_SetCounter(TIM2,0);
-    HandleStepSetIT();
+        LL_TIM_ClearFlag_UPDATE(TIM2);
+        LL_TIM_SetCounter(TIM2, 0);
+        HandleStepSetIT();
     }
   /* USER CODE END TIM2_IRQn 1 */
 }
@@ -306,12 +306,12 @@ void TIM3_IRQHandler(void)
 		HandleStepResetIT();
 		}
 */
-  if (LL_TIM_IsActiveFlag_UPDATE(TIM3))
+    if (LL_TIM_IsActiveFlag_UPDATE(TIM3))
     {
-    LL_TIM_ClearFlag_UPDATE(TIM3);
-    LL_TIM_SetCounter(TIM3,0);
-    NVIC_DisableIRQ(TIM3_IRQn);
-    HandleStepResetIT();
+        LL_TIM_ClearFlag_UPDATE(TIM3);
+        LL_TIM_SetCounter(TIM3, 0);
+        NVIC_DisableIRQ(TIM3_IRQn);
+        HandleStepResetIT();
     }
 
   /* USER CODE END TIM3_IRQn 1 */
@@ -326,7 +326,13 @@ void USART1_IRQHandler(void)
 
   /* USER CODE END USART1_IRQn 0 */
   /* USER CODE BEGIN USART1_IRQn 1 */
-
+    uint8_t data;
+    if (LL_USART_IsEnabledIT_RXNE(USART1))
+    {
+        data = LL_USART_ReceiveData8(USART1);
+        HandleUartIT(data);
+        LL_USART_ClearFlag_RXNE(USART1);
+    }
   /* USER CODE END USART1_IRQn 1 */
 }
 
@@ -342,9 +348,9 @@ void EXTI15_10_IRQHandler(void)
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_12);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-  NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
+    NVIC_ClearPendingIRQ(EXTI15_10_IRQn);
 //  pinmask = LL_GPIO_ReadInputPort(GPIOB); //-- debugging
-  HandleLimitIT();
+    HandleLimitIT();
 
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
