@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>Console Interface | Grbl Controller</title>
+        <meta name="description" content="Grbl Controller android application console interface panel information and wiki">
+        <link href="css/bootstrap.united.min.css" rel="stylesheet">
+        <link href="css/site.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="nav-wrap" id="siteNavigation"></div>
+            <div class="container">
+                <div class="site-index">
+                    <div class="body-content">
+                        <h2 class="text-center">Console Interface and Custom Commands</h2>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="gutter-lg-top">
+                                    <img src="images/console_and_custom_commands.png" class="img-responsive img-rounded" alt="Console Interface and Custom Commands" />
+                                </div>
+                                <p class="text-muted gutter-sm-top">Figure-1: Console Interface and Custom Commands</p>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <ul class="gutter-lg-top">
+                                    <li class="gutter-md-top">
+                                        <code>Verbose output</code> When enabled it will show the grbl status reports in console logger
+                                    </li>
+                                </ul>
+                                
+                                <h4>Machine status buttons</h4>
+                                <ul class="gutter-sm-top">
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">&nbsp;$$&nbsp;</code> View Grbl settings
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">&nbsp;$#&nbsp;</code> View gcode parameters
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">&nbsp;$G&nbsp;</code> View gcode parser state
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">&nbsp;$I&nbsp;</code> View build info
+                                    </li>
+                                    <li class="gutter-md-top">
+                                        <code class="btn btn-xs">&nbsp;<i class="fa fa-paper-plane"></i>&nbsp;</code> Custom command send button.
+                                        <ol>
+                                            <li class="gutter-md-top">
+                                                Short Click: Sends the custom command typed in the text box to grbl
+                                            </li>
+                                            <li class="gutter-md-top">
+                                                Long Click: Clears the console message window.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                
+                                <div class="help-block">
+                                    NOTES:
+                                    <ol>
+                                        <li class="gutter-md-top">
+                                            Not all messages from grbl are printed to console interface.
+                                        </li>
+                                        <li class="gutter-md-top">
+                                            Currently you can only see recent 128 entries in the console logger, this is done to reduce the memory consumption of the application.
+                                        </li>
+                                        <li class="gutter-md-top">
+                                            Sometimes custom command input box and send button <code class="btn btn-xs">&nbsp;<i class="fa fa-paper-plane"></i>&nbsp;</code> will not appear, then you need to click on any other tabs except the "probing tab <i class="fa fa-crosshairs"></i>" and come back again.
+                                        </li>
+                                        <li class="gutter-md-top">
+                                            Custom command will be parsed before sending to grbl, parser will remove any white space or comments and will capitalize the letters.
+                                        </li>
+                                        <li class="gutter-md-top">
+                                            Depending on the custom command you are sending application may also send some additional commands like "$G or $#" to get the recent status of the machine. 
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer gutter-lg-top">
+                <div class="container">
+                    <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+                    <span class="pull-right"> | </span>
+                    <a href="https://github.com/zeevy/grblcontroller" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("li.application-info").addClass('active'); $('li.application-info li:eq(4)').addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+</html>

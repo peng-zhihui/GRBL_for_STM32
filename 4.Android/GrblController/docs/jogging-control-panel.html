@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>Jogging Control Panel | Grbl Controller</title>
+        <meta name="description" content="Grbl Controller android application jogin control panel information and wiki">
+        <link href="css/bootstrap.united.min.css" rel="stylesheet">
+        <link href="css/site.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="nav-wrap" id="siteNavigation"></div>
+            <div class="container">
+                <div class="site-index">
+                    <div class="body-content clearfix">
+                        <h2 class="text-center">Jogging Control Panel</h2>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="gutter-lg-top">
+                                    <img src="images/jogging_control_panel.png" class="img-responsive img-rounded" alt="Jogging Control Panel Information" />
+                                </div>
+                                <p class="text-muted gutter-sm-top">Figure-1: Jogging control panel information</p>
+                            </div>
+                                
+                            <div class="col-sm-6">
+                                <h3>Jogging control, homing and return to zero</h3>
+                                <ul>
+                                    <li class="gutter-sm-top">
+                                        <code>Step Size | Jog Feed</code> adjust jogging step and feed rate here. 
+                                        Max feed rate value depends on the machine settings.
+                                        Max step size can be configured in settings.
+                                    </li> 
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-left fa-rotate-45 fa-20px text-black fa-vam">&nbsp;</i></code>
+                                        <code>X- Y+</code> Move the machine in X negative and Y positive direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-up fa-20px text-black fa-vam"></i> </code> 
+                                        <code>Y+</code> Move the machine in Y positive direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-up fa-rotate-45 fa-20px text-black fa-vam"></i></code>
+                                        <code>X+ Y+</code> Move the machine in X positive and Y positive direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-up fa-20px text-black fa-vam"></i></code> 
+                                        <code>Z+</code> Move the machine in Z positive direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-left fa-20px text-black fa-vam"></i></code> 
+                                        <code>X-</code> Move the machine in X negative direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-home fa-18px text-black fa-vam"></i></code> 
+                                        <span class="text-info">Homing button</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Do machine homing with $H
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Set all axis location in current coordinate system to zero <code>G10 L20 P0 X0Y0Z0</code>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-right fa-20px text-black fa-vam"></i></code> 
+                                        <code>X+</code> Move the machine in X positive direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-stop-circle-o fa-15px text-danger fa-vam"></i></code> 
+                                        <span class="text-info">Jog cancel | Go to zero</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">Short Click: Tries to stop the current jogging or any custom button task</li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Go to zero position in current work coordinates 
+                                                (this will first move the z-axis to zero in machine coordinates then moves x,y to zero in work coordinates then moves the z-axis to zero in work coordinates)
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-down fa-20px fa-rotate-45 text-black fa-vam"></i></code> 
+                                        <code>X- Y-</code> Move the machine in X negative and Y negative direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-down fa-20px text-black fa-vam"></i></code> 
+                                        <code>Y-</code> Move the machine in Y negative direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-right fa-20px fa-rotate-45 text-black fa-vam"></i></code> 
+                                        <code>X+ Y-</code> Move the machine in X positive and Y negative direction.
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs"><i class="fa fa-caret-down fa-20px text-black fa-vam"></i></code> 
+                                        <code>Z-</code> Move the machine in Z negative direction.
+                                    </li>
+                                </ul>
+                                <p class="text-muted text-warning">NOTE: Click and holding the axis move buttons will repeatedly execute the commands at an interval of 35 milli seconds approximately.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Alarm unlock and axis control</h3>
+                                <ul>
+                                    <li class="gutter-sm-top">
+                                        <span class="text-info">Alarm status | Alarm Unlock</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                <code class="btn btn-xs"><i class="fa fa-bell-slash-o fa-15px text-black fa-vam"></i></code>
+                                                Alarms not active. Clicking on this state does nothing.
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                <code class="btn btn-xs"><i class="fa fa-bell fa-15px text-danger fa-vam"></i></code>
+                                                Alarm is triggered. Clicking on this button will send unlock command $X
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">X <i class="fa fa-dot-circle-o fa-18px text-black fa-vam"></i></code>
+                                        <span class="text-info">X-Axis control</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Set x-axis location in current coordinate system to zero
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Move x-axis to zero position in current coordinate system <code>G0X0</code>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">Y <i class="fa fa-dot-circle-o fa-lg text-black fa-vam"></i></code>
+                                        <span class="text-info">Y-Axis control</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Set y-axis location in current coordinate system to zero
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Move y-axis to zero position in current coordinate system <code>G0Y0</code>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">Z <i class="fa fa-dot-circle-o fa-lg text-black fa-vam"></i></code>
+                                        <span class="text-info">Z-Axis control</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Set z-axis location in current coordinate system to zero
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Move z-axis to zero position in current coordinate system <code>G0Z0</code>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Work coordinate offsets</h3>
+                                <ul>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs text-black">G54</code> 
+                                        <span class="text-info">Coordinate System 1</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Select coordinate system 1
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Saves current work position to coordinate system 1
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs text-black">G55</code> 
+                                        <span class="text-info">Coordinate System 2</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Select coordinate system 2
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Saves current work position to coordinate system 2
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs text-black">G56</code> 
+                                        <span class="text-info">Coordinate System 3</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Select coordinate system 3
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Saves current work position to coordinate system 3
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs text-black">G57</code> 
+                                        <span class="text-info">Coordinate System 4</span>
+                                        <ol>
+                                            <li class="gutter-sm-top">
+                                                Short Click: Select coordinate system 4
+                                            </li>
+                                            <li class="gutter-sm-top">
+                                                Long Click: Saves current work position to coordinate system 4
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="gutter-lg-top">
+                                    <img src="images/joggin_step_and_feed.png" class="img-responsive img-rounded" alt="Jogging step size and feed adjust dialog" />
+                                </div>
+                                <p class="text-muted gutter-sm-top">Figure-2: Jogging step size and feed adjust dialog</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Jogging step size and feed rate adjusting</h3>
+                                <p>
+                                    This dialog pops upon clicking <code>Step Size | Jog Feed</code>
+                                </p>
+                                <ul class="gutter-sm-top">
+                                    <li class="gutter-sm-top">
+                                        <code>Inches</code> When turned on machine units for jogging is set to "Inches"
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        To adjust the X and Y axis step size slide the <code>XY: </code> progress bar.<br />
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        To adjust the Z axis step size slide the <code>Z: </code> progress bar.<br />
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        To adjust the jogging feed rate slide the <code>Feed: </code> progress bar.<br />
+                                    </li>
+                                </ul>
+                                <p class="text-warning">
+                                    NOTE: Maximum value of X, Y and Z axis progress bar can be configured in application settings.
+                                <p>
+                                    
+                                </p>
+                                <h4 class="gutter-lg-top">Quick step setting buttons</h4>
+                                <p>
+                                    Quick buttons are provide to set the step size to a predefined value. Value of each button can be set in application settings.
+                                </p>
+                                <ul class="gutter-sm-top">
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">XY: Low</code>
+                                        <ol class="gutter-sm-top">
+                                            <li>Short Click: Sets the configured low value as X and Y axis step size.</li>
+                                            <li>Long Click: Changes the pre-configured low value to current XY progress bar value</li>
+                                        </ol>
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">XY: Medium</code>
+                                        <ol class="gutter-sm-top">
+                                            <li>Short Click: Sets the configured medium value as X and Y axis step size.</li>
+                                            <li>Long Click: Changes the pre-configured medium value to current XY progress bar value</li>
+                                        </ol>
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">XY: High</code>
+                                        <ol class="gutter-sm-top">
+                                            <li>Short Click: Sets the configured high value as X and Y axis step size.</li>
+                                            <li>Long Click: Changes the pre-configured high value to current XY progress bar value</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                <ul class="gutter-sm-top">
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">Z: Low</code>
+                                        <ol class="gutter-sm-top">
+                                            <li>Short Click: Sets the configured low value as X axis step size.</li>
+                                            <li>Long Click: Changes the pre-configured low value to current Z progress bar value</li>
+                                        </ol>
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">Z: Medium</code>
+                                        <ol class="gutter-sm-top">
+                                            <li>Short Click: Sets the configured medium value as Z axis step size.</li>
+                                            <li>Long Click: Changes the pre-configured medium value to current Z progress bar value</li>
+                                        </ol>
+                                    </li>
+                                    <li class="gutter-sm-top">
+                                        <code class="btn btn-xs">Z: High</code>
+                                        <ol class="gutter-sm-top">
+                                            <li>Short Click: Sets the configured high value as Z axis step size.</li>
+                                            <li>Long Click: Changes the pre-configured high value to current Z progress bar value</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Custom Buttons</h3>
+                                <p>
+                                    Application supports four custom buttons in jog control panel <span class="text-muted text-warning">(needs to be enable in settings)</span>. Button labels and actions can be customized via settings.
+                                    Custom buttons also supports both short click and long click events and can behave accordingly.<br />
+                                    Custom buttons supports commands upto 2048 characters in length, will be sent to grbl using character counting protocol.
+                                    You can cancel any currently running custom command by pressing the "Jog Cancel" <code class="btn btn-xs"><i class="fa fa-stop-circle-o fa-18px text-danger fa-vam"></i></code> <code>Jog cancel | Go to zero</code> button
+                                </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Additional <code class="btn btn-xs padding-md-left padding-md-right">A</code> and <code class="btn btn-xs padding-md-left padding-md-right">B</code> Axis Support</h3>
+                                <p>
+                                    This feature is only available in paid version <span class="text-muted text-success">(Grbl Controller +)</span><br />
+                                    When enabled in settings jogging control panel will show four additional buttons <code>A+</code>, <code>A-</code>, <code>B+</code> and <code>B-</code>
+                                    these buttons can be used to control the jogging of any additional axis that are added in custom versions of grbl <span class="text-muted text-warning">(currently its not possible to view the current position of these axis in application)</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <hr />
+                    </div>
+                        
+                </div>
+            </div>
+
+            <footer class="footer gutter-lg-top">
+                <div class="container">
+                    <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+                    <span class="pull-right"> | </span>
+                    <a href="https://github.com/zeevy/grblcontroller" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("li.application-info").addClass('active'); $('li.application-info li:eq(1)').addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+</html>

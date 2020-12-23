@@ -1,0 +1,28 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_black_shortcut_icon_12dp"
+        android:shortcutShortLabel="@string/app_shortcut_short_test_settings"
+        android:shortcutLongLabel="@string/app_shortcut_long_text_settings">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="in.co.gorest.grblcontroller"
+            android:targetClass="in.co.gorest.grblcontroller.SettingsActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="about"
+        android:enabled="true"
+        android:icon="@drawable/ic_android_black_shortcut_icon_12dp"
+        android:shortcutShortLabel="@string/app_shortcut_short_test_about"
+        android:shortcutLongLabel="@string/app_shortcut_long_text_about">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="in.co.gorest.grblcontroller"
+            android:targetClass="in.co.gorest.grblcontroller.AboutActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+</shortcuts>

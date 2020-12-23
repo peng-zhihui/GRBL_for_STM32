@@ -1,0 +1,134 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="console" type="in.co.gorest.grblcontroller.listeners.ConsoleLoggerListener" />
+        <variable name="machineStatus" type="in.co.gorest.grblcontroller.listeners.MachineStatusListener" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/console_scroll_view"
+        android:paddingTop="8dp"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_toStartOf="@+id/console_verbose_output"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/text_verbose_output"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/console_verbose_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <ViewSwitcher
+                android:layout_marginBottom="16dp"
+                android:id="@+id/console_view_switcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@{console.messages}"
+                        android:minHeight="260dp"
+                        android:maxLines="17"
+                        android:padding="8dp"
+                        android:gravity="bottom"
+                        android:id="@+id/console_logger"
+                        android:scrollbars="vertical"
+                        android:scrollbarStyle="insideInset"
+                        android:overScrollMode="always"
+                        android:fadeScrollbars="false"
+                        android:textSize="12sp"
+                        android:background="@drawable/rounded_border_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:padding="8dp"
+                        android:background="@drawable/rounded_border_edit_text"
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:scrollbars="vertical"/>
+
+                </RelativeLayout>
+
+            </ViewSwitcher>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow tools:ignore="UselessParent">
+
+                    <EditText
+                        android:id="@+id/command_input"
+                        android:padding="7dp"
+                        android:maxLength="78"
+                        android:maxLines="1"
+                        android:inputType="textCapCharacters"
+                        android:layout_weight="0.60"
+                        android:background="@drawable/rounded_border_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        tools:ignore="LabelFor" />
+
+                    <com.joanzapata.iconify.widget.IconButton
+                        android:text="{fa-send 20sp @color/colorAccent}"
+                        android:id="@+id/send_command"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.20"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+
+                    <com.joanzapata.iconify.widget.IconButton
+                        android:text="{fa-history 20sp @color/colorAccent}"
+                        android:id="@+id/console_history"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.20"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
+
